@@ -1,0 +1,21 @@
+# Menu principal. `url: "#"` marca itens fora de escopo nesta entrega (link visual).
+- title: Institucional
+  url: "#"
+- title: Ingresso
+  url: "#"
+- title: Ensino
+  url: "#"
+- title: Pesquisa
+  url: "#"
+- title: Extensão
+  url: "#"
+- title: Estudantes
+  url: "#"
+- title: Servidores
+  url: "#"
+- title: Notícias
+  url: "/noticias/"
+- title: Campi
+  url: "/campi/"
+- title: Acesso à Informação
+  url: "#"

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="section">
+  <div class="container container--narrow">
+    <nav class="breadcrumb" aria-label="Trilha de navegação">
+      <a href="{{ '/' | relative_url }}">Início</a>
+      <span aria-hidden="true">/</span>
+      <a href="{{ '/noticias/' | relative_url }}">Notícias</a>
+    </nav>
+
+    {% if page.category %}<span class="badge">{{ page.category }}</span>{% endif %}
+    <h1 class="post__title">{{ page.title }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%d/%m/%Y" }}
+      </time>
+      {% if page.campus %} · {{ page.campus }}{% endif %}
+    </p>
+
+    <div class="post__body">
+      {{ content }}
+    </div>
+
+    <p class="post__back">
+      <a href="{{ '/noticias/' | relative_url }}">&larr; Voltar para as notícias</a>
+    </p>
+  </div>
+</article>

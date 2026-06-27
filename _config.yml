@@ -1,0 +1,37 @@
+title: Universidade Federal do Pampa
+short_name: UNIPAMPA
+description: >-
+  Portal institucional da Universidade Federal do Pampa (UNIPAMPA) — ensino,
+  pesquisa e extensão em dez campi no Rio Grande do Sul.
+url: "https://unipampa.github.io"
+baseurl: ""
+lang: pt-BR
+
+# Identidade / contato (usados no rodapé)
+copyright_year: 2026
+horario_atendimento: "Segunda a sexta, 08h às 12h e das 13h30 às 17h30"
+email_contato: "comunicacaosocial@unipampa.edu.br"
+
+# Build (GitHub Pages nativo)
+markdown: kramdown
+permalink: /noticias/:year/:month/:day/:title/
+encoding: utf-8
+
+# Paginação simples via Liquid (sem plugins): limitamos nos próprios layouts.
+paginate_limit: 6
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - docs/
+  - .remember/
+  - .firecrawl/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

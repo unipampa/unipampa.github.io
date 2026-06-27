@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% include hero.html %}
+
+<section class="section" aria-labelledby="noticias-titulo">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="noticias-titulo" class="section__title">Notícias</h2>
+      <a class="section__more" href="{{ '/noticias/' | relative_url }}">Ver todas</a>
+    </div>
+    <div class="grid grid--news">
+      {% for post in site.posts limit: 6 %}
+        {% include news-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include quick-links.html %}
+
+{% include campi.html %}

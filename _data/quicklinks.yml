@@ -1,0 +1,17 @@
+# Blocos de acesso rápido na home. `icon` é o nome de um símbolo SVG inline.
+- title: Ingresso
+  desc: Processos seletivos, SISU, vestibular e transferências.
+  icon: ingresso
+  url: "#"
+- title: Ensino
+  desc: Graduação, pós-graduação e cursos técnicos.
+  icon: ensino
+  url: "#"
+- title: Pesquisa
+  desc: Grupos, projetos e iniciação científica.
+  icon: pesquisa
+  url: "#"
+- title: Extensão
+  desc: Projetos e ações que conectam a universidade à comunidade.
+  icon: extensao
+  url: "#"

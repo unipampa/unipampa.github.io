@@ -1,0 +1,25 @@
+<section class="section section--muted" aria-labelledby="acesso-titulo">
+  <div class="container">
+    <h2 id="acesso-titulo" class="section__title">Acesso rápido</h2>
+    <div class="grid grid--quick">
+      {% for link in site.data.quicklinks %}
+      <a class="quick" href="{% if link.url == '#' %}#{% else %}{{ link.url | relative_url }}{% endif %}">
+        <span class="quick__icon" aria-hidden="true">
+          {% case link.icon %}
+          {% when 'ingresso' %}
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm0 13L4 11.7V14l8 4.4 8-4.4v-2.3L12 16Z"/></svg>
+          {% when 'ensino' %}
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm0 18H6V4h2v8l2.5-1.5L13 12V4h5v16Z"/></svg>
+          {% when 'pesquisa' %}
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 5 1.5-1.5-5-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z"/></svg>
+          {% when 'extensao' %}
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 0 1 0-16c.34 0 .67.02 1 .07C9.7 5.4 8 8.5 8 12s1.7 6.6 5 7.93c-.33.05-.66.07-1 .07Z"/></svg>
+          {% endcase %}
+        </span>
+        <span class="quick__title">{{ link.title }}</span>
+        <span class="quick__desc">{{ link.desc }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

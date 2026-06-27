@@ -1,0 +1,20 @@
+{%- comment -%}
+  Card de notícia. Recebe `post` (um objeto de _posts).
+{%- endcomment -%}
+<article class="card">
+  <div class="card__body">
+    {% if include.post.category %}
+    <span class="badge">{{ include.post.category }}</span>
+    {% endif %}
+    <h3 class="card__title">
+      <a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a>
+    </h3>
+    <time class="card__date" datetime="{{ include.post.date | date_to_xmlschema }}">
+      {{ include.post.date | date: "%d/%m/%Y" }}
+    </time>
+    <p class="card__excerpt">
+      {{ include.post.excerpt | default: include.post.content | strip_html | truncate: 140 }}
+    </p>
+    <a class="card__more" href="{{ include.post.url | relative_url }}">Leia mais</a>
+  </div>
+</article>

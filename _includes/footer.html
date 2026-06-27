@@ -1,0 +1,37 @@
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div class="footer__col footer__col--brand">
+      <p class="footer__name">Universidade Federal do Pampa</p>
+      <p class="footer__text">{{ site.horario_atendimento }}</p>
+      <p class="footer__text">
+        <a href="mailto:{{ site.email_contato }}">{{ site.email_contato }}</a>
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="footer__title">Campi</h2>
+      <ul class="footer__list">
+        {% for campus in site.data.campi %}
+        <li>{{ campus.nome }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h2 class="footer__title">Acesso rápido</h2>
+      <ul class="footer__list">
+        <li><a href="{{ '/noticias/' | relative_url }}">Notícias</a></li>
+        <li><a href="{{ '/campi/' | relative_url }}">Campi</a></li>
+        <li><a href="#">Acesso à Informação</a></li>
+        <li><a href="#">Carta de Serviços ao Cidadão</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bar">
+    <div class="container">
+      <p>&copy; {{ site.copyright_year }} Universidade Federal do Pampa — UNIPAMPA.
+      Proposta de redesign (site demonstrativo).</p>
+    </div>
+  </div>
+</footer>
