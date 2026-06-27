@@ -5,9 +5,9 @@ _site/
 .sass-cache/
 
 # Ruby / Bundler
+# Gemfile.lock é versionado de propósito, para builds reproduzíveis no CI.
 vendor/
 .bundle/
-Gemfile.lock
 
 # Ferramentas locais
 .firecrawl/
