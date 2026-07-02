@@ -1,0 +1,16 @@
+{%- comment -%}
+  Listagem de notícias filtrada pelo idioma da página atual.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+<section class="section">
+  <div class="container">
+    <h1 class="page__title">{{ t.news }}</h1>
+    <div class="grid grid--news">
+      {% assign posts = site.posts | where: "lang", lang %}
+      {% for post in posts %}
+        {% include news-card.html post=post %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

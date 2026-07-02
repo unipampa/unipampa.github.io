@@ -1,0 +1,24 @@
+{%- comment -%}
+  Seletor de idioma. Encontra as versões irmãs da página atual pelo `ref`
+  (id compartilhado entre as três traduções), procurando entre páginas fixas
+  e posts. Idiomas sem tradução disponível ficam desativados.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign candidates = site.pages | concat: site.posts -%}
+{%- assign siblings = candidates | where: "ref", page.ref -%}
+<div class="langswitch" role="group" aria-label="{{ site.data.i18n[lang].lang_label }}">
+  {%- for l in site.languages -%}
+    {%- assign target = "" -%}
+    {%- for s in siblings -%}
+      {%- if s.lang == l -%}{%- assign target = s -%}{%- endif -%}
+    {%- endfor -%}
+    {%- assign code = l | upcase -%}
+    {%- if l == lang -%}
+    <span class="langswitch__item is-active" aria-current="true" lang="{{ site.data.i18n[l].bcp47 }}">{{ code }}</span>
+    {%- elsif target != "" -%}
+    <a class="langswitch__item" hreflang="{{ site.data.i18n[l].bcp47 }}" lang="{{ site.data.i18n[l].bcp47 }}" href="{{ target.url | relative_url }}">{{ code }}</a>
+    {%- else -%}
+    <span class="langswitch__item is-disabled" aria-disabled="true" lang="{{ site.data.i18n[l].bcp47 }}">{{ code }}</span>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

@@ -1,0 +1,21 @@
+# Main menu (EN). `url: "#"` marks items out of scope in this delivery.
+- title: Institutional
+  url: "#"
+- title: Admissions
+  url: "#"
+- title: Education
+  url: "#"
+- title: Research
+  url: "#"
+- title: Outreach
+  url: "#"
+- title: Students
+  url: "#"
+- title: Staff
+  url: "#"
+- title: News
+  url: "/en/noticias/"
+- title: Campuses
+  url: "/en/campi/"
+- title: Access to Information
+  url: "#"

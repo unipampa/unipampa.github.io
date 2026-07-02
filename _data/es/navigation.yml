@@ -1,0 +1,21 @@
+# Menú principal (ES). `url: "#"` marca ítems fuera de alcance en esta entrega.
+- title: Institucional
+  url: "#"
+- title: Ingreso
+  url: "#"
+- title: Enseñanza
+  url: "#"
+- title: Investigación
+  url: "#"
+- title: Extensión
+  url: "#"
+- title: Estudiantes
+  url: "#"
+- title: Funcionarios
+  url: "#"
+- title: Noticias
+  url: "/es/noticias/"
+- title: Campus
+  url: "/es/campi/"
+- title: Acceso a la Información
+  url: "#"

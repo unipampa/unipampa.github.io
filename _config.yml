@@ -7,6 +7,11 @@ url: "https://unipampa.github.io"
 baseurl: ""
 lang: pt-BR
 
+# Internacionalização (i18n nativo, sem plugin).
+# `default_lang` fica na raiz do site; os demais idiomas em /<código>/.
+languages: ["pt", "es", "en"]
+default_lang: "pt"
+
 # Identidade / contato (usados no rodapé)
 copyright_year: 2026
 horario_atendimento: "Segunda a sexta, 08h às 12h e das 13h30 às 17h30"

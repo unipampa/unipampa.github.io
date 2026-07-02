@@ -1,5 +1,7 @@
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'pt-BR' }}">
+<html lang="{{ t.bcp47 | default: 'pt-BR' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,16 +9,21 @@
   {% if page.title %}
   <title>{{ page.title }} | {{ site.short_name }}</title>
   {% else %}
-  <title>{{ site.title }}</title>
+  <title>{{ t.site_title | default: site.title }}</title>
   {% endif %}
   <meta name="description" content="{{ page.description | default: site.description | strip_newlines }}">
+  {%- assign candidates = site.pages | concat: site.posts -%}
+  {%- assign siblings = candidates | where: "ref", page.ref -%}
+  {%- for s in siblings -%}
+  <link rel="alternate" hreflang="{{ site.data.i18n[s.lang].bcp47 }}" href="{{ s.url | absolute_url }}">
+  {%- endfor -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <a class="skip-link" href="#conteudo">{{ t.skip }}</a>
   {% include header.html %}
   <main id="conteudo">
     {{ content }}

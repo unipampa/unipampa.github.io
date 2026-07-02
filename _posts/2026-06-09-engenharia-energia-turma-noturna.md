@@ -1,6 +1,8 @@
 ---
 title: "Curso de Engenharia de Energia da Unipampa abre primeira turma noturna em 2026/2"
 date: 2026-06-09
+lang: pt
+ref: engenharia-energia-noturna
 category: Ingresso
 campus: Bagé
 excerpt: >-

@@ -1,6 +1,8 @@
 ---
 title: "20 anos da Unipampa: inauguração de prédio e shows marcam comemoração em Bagé"
 date: 2026-06-12
+lang: pt
+ref: 20-anos-bage
 category: Institucional
 campus: Bagé
 excerpt: >-

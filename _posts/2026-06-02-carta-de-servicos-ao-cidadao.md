@@ -1,6 +1,8 @@
 ---
 title: "Conheça os serviços oferecidos pela Unipampa: divulgação da Carta de Serviços"
 date: 2026-06-02
+lang: pt
+ref: carta-servicos
 category: Acesso à Informação
 campus: Reitoria
 excerpt: >-

@@ -1,16 +1,21 @@
 ---
 layout: default
 ---
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign prefix = "" -%}
+{%- unless lang == site.default_lang -%}{%- assign prefix = "/" | append: lang -%}{%- endunless -%}
 {% include hero.html %}
 
 <section class="section" aria-labelledby="noticias-titulo">
   <div class="container">
     <div class="section__head">
-      <h2 id="noticias-titulo" class="section__title">Notícias</h2>
-      <a class="section__more" href="{{ '/noticias/' | relative_url }}">Ver todas</a>
+      <h2 id="noticias-titulo" class="section__title">{{ t.news }}</h2>
+      <a class="section__more" href="{{ prefix | append: '/noticias/' | relative_url }}">{{ t.see_all }}</a>
     </div>
     <div class="grid grid--news">
-      {% for post in site.posts limit: 6 %}
+      {% assign posts = site.posts | where: "lang", lang %}
+      {% for post in posts limit: 6 %}
         {% include news-card.html post=post %}
       {% endfor %}
     </div>

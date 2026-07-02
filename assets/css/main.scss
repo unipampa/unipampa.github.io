@@ -80,6 +80,18 @@ img { max-width: 100%; height: auto; }
 .topbar__inner { display: flex; justify-content: space-between; align-items: center; padding-top: .4rem; padding-bottom: .4rem; }
 .topbar__link { color: #fff; text-decoration: none; font-weight: 600; }
 .topbar__link:hover { text-decoration: underline; }
+.topbar__aux { display: flex; align-items: center; gap: 1rem; }
+
+/* ---- Seletor de idioma ---- */
+.langswitch { display: inline-flex; align-items: center; gap: .15rem; }
+.langswitch__item {
+  display: inline-block; padding: .1rem .4rem; border-radius: 4px;
+  color: #cfcfcf; text-decoration: none; font-weight: 700; font-size: .78rem;
+  letter-spacing: .02em; line-height: 1.4;
+}
+.langswitch a.langswitch__item:hover { color: #fff; background: rgba(255, 255, 255, .14); }
+.langswitch__item.is-active { color: #fff; background: var(--verde); }
+.langswitch__item.is-disabled { color: #7a7a7a; cursor: default; }
 
 /* ---- Header ---- */
 .site-header { background: var(--branco); border-bottom: 1px solid var(--cinza-borda); position: sticky; top: 0; z-index: 100; }

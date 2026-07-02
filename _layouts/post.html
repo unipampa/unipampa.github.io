@@ -1,12 +1,16 @@
 ---
 layout: default
 ---
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign prefix = "" -%}
+{%- unless lang == site.default_lang -%}{%- assign prefix = "/" | append: lang -%}{%- endunless -%}
 <article class="section">
   <div class="container container--narrow">
-    <nav class="breadcrumb" aria-label="Trilha de navegação">
-      <a href="{{ '/' | relative_url }}">Início</a>
+    <nav class="breadcrumb" aria-label="{{ t.breadcrumb_label }}">
+      <a href="{{ prefix | append: '/' | relative_url }}">{{ t.breadcrumb_home }}</a>
       <span aria-hidden="true">/</span>
-      <a href="{{ '/noticias/' | relative_url }}">Notícias</a>
+      <a href="{{ prefix | append: '/noticias/' | relative_url }}">{{ t.news }}</a>
     </nav>
 
     {% if page.category %}<span class="badge">{{ page.category }}</span>{% endif %}
@@ -23,7 +27,7 @@ layout: default
     </div>
 
     <p class="post__back">
-      <a href="{{ '/noticias/' | relative_url }}">&larr; Voltar para as notícias</a>
+      <a href="{{ prefix | append: '/noticias/' | relative_url }}">&larr; {{ t.post_back }}</a>
     </p>
   </div>
 </article>

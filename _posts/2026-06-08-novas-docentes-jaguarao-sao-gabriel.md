@@ -1,6 +1,8 @@
 ---
 title: "Campus Jaguarão e Campus São Gabriel recebem novas docentes"
 date: 2026-06-08
+lang: pt
+ref: novas-docentes
 category: Servidores
 campus: Jaguarão e São Gabriel
 excerpt: >-

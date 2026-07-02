@@ -1,11 +1,15 @@
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign prefix = "" -%}
+{%- unless lang == site.default_lang -%}{%- assign prefix = "/" | append: lang -%}{%- endunless -%}
 <section class="section" aria-labelledby="campi-titulo">
   <div class="container">
     <div class="section__head">
-      <h2 id="campi-titulo" class="section__title">Nossos dez campi</h2>
-      <a class="section__more" href="{{ '/campi/' | relative_url }}">Detalhes</a>
+      <h2 id="campi-titulo" class="section__title">{{ t.campi_home_title }}</h2>
+      <a class="section__more" href="{{ prefix | append: '/campi/' | relative_url }}">{{ t.details }}</a>
     </div>
     <div class="grid grid--campi">
-      {% for campus in site.data.campi %}
+      {% for campus in site.data[lang].campi %}
       <div class="campus">
         <span class="campus__pin" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/></svg>

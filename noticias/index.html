@@ -1,16 +1,9 @@
 ---
 layout: default
+lang: pt
+ref: noticias
 title: Notícias
 permalink: /noticias/
 description: Últimas notícias da Universidade Federal do Pampa.
 ---
-<section class="section">
-  <div class="container">
-    <h1 class="page__title">Notícias</h1>
-    <div class="grid grid--news">
-      {% for post in site.posts %}
-        {% include news-card.html post=post %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{% include noticias-list.html %}

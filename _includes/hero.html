@@ -1,15 +1,16 @@
-<section class="hero" aria-label="Destaque">
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign prefix = "" -%}
+{%- unless lang == site.default_lang -%}{%- assign prefix = "/" | append: lang -%}{%- endunless -%}
+<section class="hero" aria-label="{{ t.hero_title }}">
   <div class="container hero__inner">
     <div class="hero__content">
-      <span class="hero__eyebrow">2005 – 2025</span>
-      <h1 class="hero__title">20 anos da Unipampa</h1>
-      <p class="hero__text">
-        Duas décadas levando ensino, pesquisa e extensão a dez cidades do Pampa gaúcho.
-        Inauguração de prédio e shows marcam as comemorações em Bagé.
-      </p>
+      <span class="hero__eyebrow">{{ t.hero_eyebrow }}</span>
+      <h1 class="hero__title">{{ t.hero_title }}</h1>
+      <p class="hero__text">{{ t.hero_text }}</p>
       <div class="hero__actions">
-        <a class="btn btn--light" href="{{ '/noticias/' | relative_url }}">Ver notícias</a>
-        <a class="btn btn--ghost" href="{{ '/campi/' | relative_url }}">Conheça os campi</a>
+        <a class="btn btn--light" href="{{ prefix | append: '/noticias/' | relative_url }}">{{ t.hero_btn_news }}</a>
+        <a class="btn btn--ghost" href="{{ prefix | append: '/campi/' | relative_url }}">{{ t.hero_btn_campi }}</a>
       </div>
     </div>
   </div>

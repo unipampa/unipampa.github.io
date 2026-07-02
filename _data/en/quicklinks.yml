@@ -1,0 +1,17 @@
+# Quick-access blocks on the home page (EN). `icon` is the name of an inline SVG symbol.
+- title: Admissions
+  desc: Selection processes, SISU, entrance exams and transfers.
+  icon: ingresso
+  url: "#"
+- title: Education
+  desc: Undergraduate, graduate and technical programs.
+  icon: ensino
+  url: "#"
+- title: Research
+  desc: Groups, projects and undergraduate research.
+  icon: pesquisa
+  url: "#"
+- title: Outreach
+  desc: Projects and actions connecting the university with the community.
+  icon: extensao
+  url: "#"

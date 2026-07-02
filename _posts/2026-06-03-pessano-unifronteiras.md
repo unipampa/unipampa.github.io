@@ -1,6 +1,8 @@
 ---
 title: "Edward Pessano é eleito vice-presidente da Rede de Universidades de Fronteira"
 date: 2026-06-03
+lang: pt
+ref: pessano-unifronteiras
 category: Institucional
 campus: Uruguaiana
 excerpt: >-

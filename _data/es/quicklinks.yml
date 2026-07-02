@@ -1,0 +1,17 @@
+# Bloques de acceso rápido en la portada (ES). `icon` es el nombre de un símbolo SVG.
+- title: Ingreso
+  desc: Procesos selectivos, SISU, examen de ingreso y transferencias.
+  icon: ingresso
+  url: "#"
+- title: Enseñanza
+  desc: Grado, posgrado y cursos técnicos.
+  icon: ensino
+  url: "#"
+- title: Investigación
+  desc: Grupos, proyectos e iniciación científica.
+  icon: pesquisa
+  url: "#"
+- title: Extensión
+  desc: Proyectos y acciones que conectan la universidad con la comunidad.
+  icon: extensao
+  url: "#"

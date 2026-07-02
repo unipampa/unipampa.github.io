@@ -1,6 +1,8 @@
 ---
 title: "Curso de Música da Unipampa fica em 4º lugar nacional no ENADE"
 date: 2026-06-11
+lang: pt
+ref: musica-enade
 category: Ensino
 campus: Bagé
 excerpt: >-

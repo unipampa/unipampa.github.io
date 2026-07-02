@@ -1,23 +1,9 @@
 ---
 layout: default
+lang: pt
+ref: campi
 title: Campi
 permalink: /campi/
 description: Os dez campi da Universidade Federal do Pampa no Rio Grande do Sul.
 ---
-<section class="section">
-  <div class="container">
-    <h1 class="page__title">Os dez campi da UNIPAMPA</h1>
-    <p class="lead">
-      A Universidade Federal do Pampa está presente em dez cidades do Rio Grande do Sul,
-      levando ensino, pesquisa e extensão para a região da fronteira e da Campanha.
-    </p>
-    <div class="grid grid--campi-lg">
-      {% for campus in site.data.campi %}
-      <article class="campus-card">
-        <h2 class="campus-card__name">{{ campus.nome }}</h2>
-        <p class="campus-card__desc">{{ campus.destaque }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{% include campi-page.html %}

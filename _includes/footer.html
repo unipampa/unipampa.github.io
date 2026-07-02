@@ -1,37 +1,41 @@
+{%- assign lang = page.lang | default: site.default_lang | default: 'pt' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign prefix = "" -%}
+{%- unless lang == site.default_lang -%}{%- assign prefix = "/" | append: lang -%}{%- endunless -%}
 <footer class="site-footer">
   <div class="container footer__grid">
     <div class="footer__col footer__col--brand">
-      <p class="footer__name">Universidade Federal do Pampa</p>
-      <p class="footer__text">{{ site.horario_atendimento }}</p>
+      <p class="footer__name">{{ t.footer_name }}</p>
+      <p class="footer__text">{{ t.footer_hours }}</p>
       <p class="footer__text">
         <a href="mailto:{{ site.email_contato }}">{{ site.email_contato }}</a>
       </p>
     </div>
 
     <div class="footer__col">
-      <h2 class="footer__title">Campi</h2>
+      <h2 class="footer__title">{{ t.footer_campi }}</h2>
       <ul class="footer__list">
-        {% for campus in site.data.campi %}
+        {% for campus in site.data[lang].campi %}
         <li>{{ campus.nome }}</li>
         {% endfor %}
       </ul>
     </div>
 
     <div class="footer__col">
-      <h2 class="footer__title">Acesso rápido</h2>
+      <h2 class="footer__title">{{ t.footer_quick }}</h2>
       <ul class="footer__list">
-        <li><a href="{{ '/noticias/' | relative_url }}">Notícias</a></li>
-        <li><a href="{{ '/campi/' | relative_url }}">Campi</a></li>
-        <li><a href="#">Acesso à Informação</a></li>
-        <li><a href="#">Carta de Serviços ao Cidadão</a></li>
+        <li><a href="{{ prefix | append: '/noticias/' | relative_url }}">{{ t.news }}</a></li>
+        <li><a href="{{ prefix | append: '/campi/' | relative_url }}">{{ t.footer_campi }}</a></li>
+        <li><a href="#">{{ t.acesso_info }}</a></li>
+        <li><a href="#">{{ t.footer_carta }}</a></li>
       </ul>
     </div>
   </div>
 
   <div class="footer__bar">
     <div class="container">
-      <p>&copy; {{ site.copyright_year }} Universidade Federal do Pampa — UNIPAMPA.
-      Proposta de redesign (site demonstrativo).</p>
+      <p>&copy; {{ site.copyright_year }} {{ t.footer_name }} — UNIPAMPA.
+      {{ t.footer_copyright }}</p>
     </div>
   </div>
 </footer>
